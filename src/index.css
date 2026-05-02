@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0A0F2C 0%, #1A0533 100%);
+  min-height: 100vh;
+  font-family: 'Space Grotesk', sans-serif;
+  color: white;
+}
