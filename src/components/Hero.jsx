@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import heroImg from "../assets/hero.png"
 
 const Hero = () => {
   return (
@@ -109,7 +110,7 @@ const Hero = () => {
             {/* Glass frame & Image */}
             <div className="relative glass-panel rounded-3xl p-4 overflow-hidden border border-white/10 shadow-2xl h-full flex items-center justify-center">
               <img 
-                src="/src/assets/hero.png"
+                src={heroImg}
                 alt="Zohaib Ali - Full-Stack MERN & AI Engineer"
                 className="w-full h-full object-cover rounded-2xl hover:scale-[1.02] transition-all duration-300"
               />
