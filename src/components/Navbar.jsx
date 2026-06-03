@@ -19,18 +19,27 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
-      style={{ background: "rgba(10, 15, 44, 0.85)", backdropFilter: "blur(10px)" }}
+      style={{ background: "rgba(2, 6, 23, 0.8)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(255, 255, 255, 0.05)" }}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
-        <a href="#home" className="text-white font-bold text-xl tracking-tight">
-          Zohaib<span style={{ color: "#7C3AED" }}>.</span>dev
+        <a href="#home" className="flex items-center gap-3 group">
+          {/* Boxed Icon */}
+          <div className="w-8 h-8 rounded border border-indigo-500/50 flex items-center justify-center relative bg-slate-950/80">
+            <div className="absolute inset-[2px] border border-slate-950 rounded-sm"></div>
+            <span className="font-serif italic text-base text-indigo-400 relative z-10 font-light leading-none">Z</span>
+          </div>
+          {/* Wordmark */}
+          <div className="flex flex-col leading-none">
+            <span className="font-serif text-sm tracking-wider text-slate-100 uppercase font-light">Zohaib</span>
+            <span className="font-mono text-[7px] tracking-[0.4em] text-cyan-400 uppercase font-bold pl-[1px] mt-[1px]">Systems</span>
+          </div>
         </a>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-300 hover:text-white text-sm font-medium transition-colors duration-200"
+              className="text-slate-300 hover:text-white text-sm font-medium transition-colors duration-200"
             >
               {link.name}
             </a>
@@ -38,13 +47,11 @@ const Navbar = () => {
         </div>
         
         <a
-          href="https://www.fiverr.com/s/dD4ojd0"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#contact"
           className="hidden md:block text-white text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 hover:opacity-90"
-          style={{ background: "#7C3AED" }}
+          style={{ background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)" }}
         >
-          Hire Me on Fiverr
+          Get in Touch
         </a>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -68,20 +75,19 @@ const Navbar = () => {
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-gray-300 hover:text-white text-sm font-medium"
+              className="text-slate-300 hover:text-white text-sm font-medium"
             >
               {link.name}
             </a>
           ))}
           
           <a
-            href="https://www.fiverr.com/s/dD4ojd0"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
+            onClick={() => setIsOpen(false)}
             className="text-white text-sm font-semibold px-5 py-2 rounded-full text-center"
-            style={{ background: "#7C3AED" }}
+            style={{ background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)" }}
           >
-            Hire Me on Fiverr
+            Get in Touch
           </a>
         </motion.div>
       )}

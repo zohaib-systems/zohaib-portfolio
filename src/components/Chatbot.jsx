@@ -4,30 +4,29 @@ import { motion, AnimatePresence } from "framer-motion"
 const STORAGE_KEY = "zohaib-portfolio-chatbot-messages"
 
 const responses = [
-  { keywords: ["hi", "hello", "hey", "sup"], response: "Hi there! I am Zohaib's portfolio assistant. Ask me about his services, projects, skills, or pricing." },
-  { keywords: ["service", "what do you do", "build", "offer"], response: "Zohaib builds AI powered web apps, custom chatbots, and healthcare science applications using React and Google Gemini API." },
-  { keywords: ["project", "portfolio", "work", "example"], response: "Check out WasteWise — a live AI waste identification app — and Zohaib's Path — a full AI career counseling SaaS. Both live at zhust.me." },
-  { keywords: ["price", "cost", "how much", "rate", "charge"], response: "Services start from $60 for a basic AI chatbot to $450 for a full AI SaaS app. Visit Fiverr for full pricing details." },
-  { keywords: ["skill", "tech", "stack", "technology", "use"], response: "Zohaib uses React.js, Google Gemini API, Google AI Studio, Firebase, Tailwind CSS, and deploys on Vercel and Netlify." },
-  { keywords: ["contact", "hire", "work together", "order", "fiverr"], response: "You can hire Zohaib directly on Fiverr or chat on WhatsApp. Links are in the contact section below." },
-  { keywords: ["biology", "microbiology", "science", "healthcare"], response: "Zohaib has a microbiology undergraduate degree — making him the ideal developer for healthcare and science web applications." },
-  { keywords: ["zhust", "company", "studio"], response: "ZHUST is Zohaib's AI development studio at zhust.me — showcasing live AI projects built for real clients." },
-  { keywords: ["other", "others"], response: "Thanks for reaching out. For detailed inquiries please contact Zohaib directly — share a brief summary of your needs, desired timeline, and preferred contact method, you will be assisted soon. Use the WhatsApp link in the contact section below." },
+  { keywords: ["hi", "hello", "hey", "sup"], response: "Hi there! I am Zohaib's assistant. Ask me about his services, projects, skills, or how to contact him." },
+  { keywords: ["service", "what do you do", "build", "offer"], response: "Zohaib builds intelligent full-stack MERN SaaS apps, custom RAG document search engines, AI agent workflows, and backend systems." },
+  { keywords: ["project", "portfolio", "work", "example"], response: "Check out Zohaib's Path — a flagship AI Career Counseling MVP built on the MERN stack, and WasteWise — an AI-powered waste vision tool." },
+  { keywords: ["price", "cost", "how much", "rate", "charge"], response: "Zohaib works on a project-by-project contract basis. Reach out via email (contact@zohaib-systems.dev) or WhatsApp with your requirements to get an estimate." },
+  { keywords: ["skill", "tech", "stack", "technology", "use"], response: "Zohaib specializes in MongoDB, Express, React, Node.js, Google Gemini API, Vector Databases (RAG), Firebase, and Tailwind CSS." },
+  { keywords: ["contact", "hire", "work together", "order"], response: "You can email Zohaib directly at contact@zohaib-systems.dev or chat on WhatsApp (+923293531951)." },
+  { keywords: ["company", "studio", "systems", "zohaib systems"], response: "Zohaib Systems is Zohaib Ali's independent contract development brand, building production-ready AI products for clients." },
+  { keywords: ["other", "others"], response: "Thanks for reaching out. For detailed inquiries please contact Zohaib directly — send an email to contact@zohaib-systems.dev or use the WhatsApp link below." },
 ]
 
-const quickReplies = ["Services", "Pricing", "Projects", "Skills", "Contact", "Others"]
+const quickReplies = ["Services", "Projects", "Skills", "Contact", "Others"]
 
 const getResponse = (input) => {
   const lower = input.toLowerCase().replace(/[^a-z0-9\s]/g, " ")
   const match = responses.find((r) => r.keywords.some((k) => lower.includes(k)))
-  return match ? match.response : "I did not quite catch that. Try asking about Zohaib's services, projects, pricing, skills, or contact options."
+  return match ? match.response : "I did not quite catch that. Try asking about Zohaib's services, projects, skills, or contact options."
 }
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState(() => {
     if (typeof window === "undefined") {
-      return [{ from: "bot", text: "Hi! I am Zohaib's assistant. Ask me anything about his services or projects." }]
+      return [{ from: "bot", text: "Hi! I am Zohaib's assistant. Ask me anything about his services, projects, or how to contact him." }]
     }
 
     try {
@@ -39,7 +38,7 @@ const Chatbot = () => {
       // Ignore malformed saved state and fall back to the default greeting.
     }
 
-    return [{ from: "bot", text: "Hi! I am Zohaib's assistant. Ask me anything about his services or projects." }]
+    return [{ from: "bot", text: "Hi! I am Zohaib's assistant. Ask me anything about his services, projects, or how to contact him." }]
   })
   const [input, setInput] = useState("")
   const [isTyping, setIsTyping] = useState(false)
@@ -119,9 +118,9 @@ const Chatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className="mb-4 w-80 rounded-2xl overflow-hidden shadow-2xl"
-            style={{ background: "#0A0F2C", border: "1px solid rgba(124,58,237,0.3)" }}
+            style={{ background: "#090d1a", border: "1px solid rgba(99, 102, 241, 0.3)" }}
           >
-            <div className="px-4 py-3 flex items-center justify-between" style={{ background: "#7C3AED" }}>
+            <div className="px-4 py-3 flex items-center justify-between" style={{ background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)" }}>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-green-400"></div>
                 <p className="text-white text-sm font-semibold">Zohaib's Assistant</p>
@@ -135,7 +134,7 @@ const Chatbot = () => {
                   <p
                     className="text-xs px-3 py-2 rounded-2xl max-w-xs leading-relaxed"
                     style={{
-                      background: msg.from === "user" ? "#7C3AED" : "rgba(255,255,255,0.05)",
+                      background: msg.from === "user" ? "#6366F1" : "rgba(255,255,255,0.05)",
                       color: "white",
                     }}
                   >
@@ -162,7 +161,7 @@ const Chatbot = () => {
                   type="button"
                   onClick={() => handleQuickReply(reply)}
                   className="px-3 py-1 rounded-full text-[10px] font-semibold text-white"
-                  style={{ background: "rgba(124,58,237,0.18)", border: "1px solid rgba(124,58,237,0.35)" }}
+                  style={{ background: "rgba(99, 102, 241, 0.15)", border: "1px solid rgba(99, 102, 241, 0.3)" }}
                 >
                   {reply}
                 </button>
@@ -176,13 +175,13 @@ const Chatbot = () => {
                 onKeyDown={handleKey}
                 placeholder="Ask me anything..."
                 className="flex-1 text-xs px-3 py-2 rounded-full outline-none text-white"
-                style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(124,58,237,0.3)" }}
+                style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(99, 102, 241, 0.25)" }}
               />
               <button
                 onClick={sendMessage}
                 disabled={!input.trim() || isTyping}
                 className="px-3 py-2 rounded-full text-white text-xs font-semibold"
-                style={{ background: "#7C3AED", opacity: !input.trim() || isTyping ? 0.6 : 1, cursor: !input.trim() || isTyping ? "not-allowed" : "pointer" }}
+                style={{ background: "#6366F1", opacity: !input.trim() || isTyping ? 0.6 : 1, cursor: !input.trim() || isTyping ? "not-allowed" : "pointer" }}
               >
                 Send
               </button>
@@ -197,7 +196,7 @@ const Chatbot = () => {
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close chatbot" : "Open chatbot"}
         className="relative grid h-14 w-14 place-items-center overflow-hidden rounded-full text-white shadow-lg leading-none"
-        style={{ background: "#7C3AED" }}
+        style={{ background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)" }}
       >
         <AnimatePresence mode="wait" initial={false}>
           {isOpen ? (

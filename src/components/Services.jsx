@@ -2,32 +2,28 @@ import { motion } from "framer-motion"
 
 const services = [
   {
-    icon: "🤖",
-    title: "AI Powered Web Apps",
-    description: "Full stack React web applications integrated with Google Gemini API. From single page AI tools to complete SaaS platforms.",
-    price: "From $80",
-    link: "https://www.fiverr.com/s/dD4ojd0",
+    icon: "💻",
+    title: "Intelligent MERN SaaS Apps",
+    description: "Full-stack MongoDB, Express, React, and Node.js web applications embedded with reasoning LLM agents, user dashboards, and automated workflows.",
+    scope: "MVP to Scale",
   },
   {
-    icon: "💬",
-    title: "Custom AI Chatbots",
-    description: "Healthcare and science specific chatbots trained on your documents using Google Gemini and Firebase RAG implementation.",
-    price: "From $60",
-    link: "https://www.fiverr.com/s/dD4ojd0",
+    icon: "🔍",
+    title: "AI RAG & Document Search",
+    description: "Enterprise-grade knowledge base integration using Vector Databases (Pinecone/MongoDB), semantic embedding models, and custom prompt templates.",
+    scope: "Data Integration",
+  },
+  {
+    icon: "⚙️",
+    title: "AI Backend & API Design",
+    description: "Robust Express/Node.js API servers built to orchestrate heavy LLM workloads, streaming completions, token optimization, and secure integrations.",
+    scope: "Backend / DevOps",
   },
   {
     icon: "🧬",
-    title: "Healthcare and Science Apps",
-    description: "Specialized web applications for clinics, research labs, and biotech startups. Domain knowledge included — not just the code.",
-    price: "Custom Quote",
-    link: "https://www.fiverr.com/s/dD4ojd0",
-  },
-  {
-    icon: "📊",
-    title: "AI SaaS Dashboards",
-    description: "Production ready SaaS applications with AI insights, user authentication, cloud sync, and real time data visualization.",
-    price: "From $200",
-    link: "https://www.fiverr.com/s/dD4ojd0",
+    title: "BioTech & Science AI Systems",
+    description: "Secure, regulatory-aware applications for biotech startups and healthcare providers, bridging complex science requirements with clean code.",
+    scope: "Domain Specific",
   },
 ]
 
@@ -42,9 +38,9 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-purple-400 text-sm font-medium mb-3 uppercase tracking-widest">What I Offer</p>
-          <h2 className="text-4xl font-bold text-white mb-4">Services</h2>
-          <p className="text-gray-400 max-w-xl mx-auto">All services available on Fiverr with clear pricing and fast delivery</p>
+          <p className="text-indigo-400 text-sm font-medium mb-3 uppercase tracking-widest">What I Offer</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Engineering Services</h2>
+          <p className="text-slate-400 max-w-xl mx-auto">End-to-end development of modern intelligent products built to scale</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -56,21 +52,24 @@ const Services = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="p-6 rounded-2xl flex flex-col gap-4"
-              style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)" }}
+              style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
             >
-              <span className="text-4xl">{service.icon}</span>
+              <div className="flex justify-between items-start">
+                <span className="text-4xl">{service.icon}</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded bg-indigo-900/30 text-indigo-300 border border-indigo-500/20">
+                  {service.scope}
+                </span>
+              </div>
               <h3 className="text-white font-bold text-lg">{service.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed flex-1">{service.description}</p>
-              <div className="flex items-center justify-between mt-2">
-                <span className="text-purple-400 font-semibold text-sm">{service.price}</span>
+              <p className="text-slate-400 text-sm leading-relaxed flex-1">{service.description}</p>
+              <div className="flex items-center justify-between mt-4 pt-4" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+                <span className="text-indigo-400 text-xs font-semibold">Production Ready</span>
                 <a
-                  href={service.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-full text-white text-xs font-semibold"
-                  style={{ background: "#7C3AED" }}
+                  href="#contact"
+                  className="px-4 py-2 rounded-full text-white text-xs font-semibold transition-all duration-200 hover:opacity-90"
+                  style={{ background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)" }}
                 >
-                  Order on Fiverr
+                  Discuss Project
                 </a>
               </div>
             </motion.div>

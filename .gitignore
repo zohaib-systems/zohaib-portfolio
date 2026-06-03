@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local guides, sandboxes, and raw banner assets
+Premium LinkedIn Banner (Dark Mode) (4).png
+signs.html
+implementation_plan.md
+linkedin_banner_prompts.md
+personal_image_prompts.md
+signature_recommendations.md
