@@ -38,7 +38,7 @@ const About = () => {
 
           <div className="flex gap-4">
             <a
-              href="https://linkedin.com/in/zohaib-ali"
+              href="www.linkedin.com/in/zohaib-ali-dev"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full text-white text-sm font-semibold hover:opacity-90"
