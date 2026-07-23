@@ -28,7 +28,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
           >
-            AI System Architect
+           Zohaib Ali – AI System Architect
             <br />
             <span className="text-gradient"></span>
           </motion.h1>
