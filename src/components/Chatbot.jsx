@@ -110,14 +110,14 @@ const Chatbot = () => {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed inset-x-4 bottom-4 z-50 flex justify-end sm:inset-x-auto sm:bottom-6 sm:right-6">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="mb-4 w-80 rounded-2xl overflow-hidden shadow-2xl"
+            className="mb-3 w-[min(20rem,calc(100vw-2rem))] rounded-2xl overflow-hidden shadow-2xl sm:mb-4 sm:w-80"
             style={{ background: "#090d1a", border: "1px solid rgba(99, 102, 241, 0.3)" }}
           >
             <div className="px-4 py-3 flex items-center justify-between" style={{ background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)" }}>
@@ -132,7 +132,7 @@ const Chatbot = () => {
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}>
                   <p
-                    className="text-xs px-3 py-2 rounded-2xl max-w-xs leading-relaxed"
+                    className="text-xs px-3 py-2 rounded-2xl max-w-[85%] leading-relaxed break-words"
                     style={{
                       background: msg.from === "user" ? "#6366F1" : "rgba(255,255,255,0.05)",
                       color: "white",
@@ -145,7 +145,7 @@ const Chatbot = () => {
 
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="px-3 py-2 rounded-2xl max-w-xs leading-relaxed text-xs text-white" style={{ background: "rgba(255,255,255,0.05)" }}>
+                  <div className="px-3 py-2 rounded-2xl max-w-[85%] leading-relaxed text-xs text-white break-words" style={{ background: "rgba(255,255,255,0.05)" }}>
                     Typing...
                   </div>
                 </div>

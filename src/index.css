@@ -18,6 +18,10 @@ body {
   overflow-x: hidden;
 }
 
+#root {
+  overflow-x: hidden;
+}
+
 body {
   background: #020617; /* Slate 950 */
   background-image: 
@@ -30,6 +34,21 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   color: #F8FAFC; /* Slate 50 */
   overflow-x: hidden;
+}
+
+main {
+  width: 100%;
+}
+
+section {
+  scroll-margin-top: 88px;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: anywhere;
 }
 
 img {
