@@ -2,34 +2,44 @@ import { motion } from "framer-motion"
 
 const projects = [
   {
-    title: "Zohaib's Path",
-    description: "A production-grade AI-powered career counseling SaaS that 'thinks'. Features a fully responsive user dashboard, interactive AI advisor chatbot, automated custom roadmap generator, and secure MongoDB/Firebase resume sync.",
-    tech: ["MongoDB", "Express", "React", "Node.js", "Gemini API", "Firebase Auth"],
-    link: "https://zhust.me",
+    title: "AgentZ",
+    description: "Multi-agent system for personal business automation. Handles job discovery, email triage, calendar scheduling, focus tracking. Built on Google ADK 2.0, MCP integrations, and Groq API. Production ready.",
+    tech: ["Google ADK 2.0", "MCP", "Groq API"],
+    github: "https://github.com/zohaib-ali",
+    architecture: "#about",
+    color: "#06B6D4",
+    icon: "🤖",
+    featured: true,
+  },
+  {
+    title: "HealthSync",
+    description: "AI booking system for clinics. Solves real scheduling and coordination problems. Why it matters: Operational problem solved with AI.",
+    tech: ["AI Scheduling", "Clinic Ops", "Automation"],
+    link: "#contact",
     color: "#A78BFA",
-    icon: "🎯",
+    icon: "🏥",
     featured: true,
   },
   {
     title: "WasteWise",
-    description: "AI-powered ecological assistant. Captures real-time webcam streams to classify recyclables, calculates carbon offset metrics, and saves logs into a cloud backend database.",
-    tech: ["MongoDB", "Express", "React", "Node.js", "Gemini Vision API"],
+    description: "AI-powered ecological assistant. Classifies recyclables and calculates carbon offset metrics. Recognition: Top 800 nationally (ML product). Why it matters: Product proven at scale.",
+    tech: ["ML Product", "Carbon Metrics", "Recycling AI"],
     link: "https://zhust.me",
     color: "#10B981",
     icon: "♻️",
   },
   {
-    title: "Study Converter",
-    description: "Intelligent content synthesizer that parses lecture notes and academic papers, converting them into structured study guides, flashcards, and custom quizzes using Gemini.",
-    tech: ["Node.js", "Express", "React", "Gemini API", "Tailwind CSS"],
+    title: "LM-OS",
+    description: "Personal knowledge system. Why it matters: Demonstrates systems thinking in personal infrastructure.",
+    tech: ["Knowledge System", "Personal Infrastructure", "Systems Thinking"],
     link: "https://zhust.me",
     color: "#3B82F6",
-    icon: "📚",
+    icon: "🧠",
   },
   {
     title: "ZHUST Studio",
-    description: "Custom agency portfolio for my freelance AI studio. Manages client requests, automates service estimates using prompt templates, and hosts active MERN stack project live demos.",
-    tech: ["MERN Stack", "Gemini API", "Framer Motion", "Tailwind CSS"],
+    description: "Custom agency portfolio for my freelance AI studio. Manages client requests, automates service estimates using prompt templates, and hosts active project demos.",
+    tech: ["Gemini API", "Framer Motion", "Tailwind CSS"],
     link: "https://zhust.me",
     color: "#F59E0B",
     icon: "🏢",
@@ -38,7 +48,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 px-6">
+    <section id="projects" className="py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,11 +58,11 @@ const Projects = () => {
           className="text-center mb-16"
         >
           <p className="text-indigo-400 text-sm font-medium mb-3 uppercase tracking-widest">My Work</p>
-          <h2 className="text-4xl font-bold text-white mb-4">Featured Products</h2>
-          <p className="text-gray-400 max-w-xl mx-auto">Production-ready MERN & AI applications you can test right now</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Featured Products</h2>
+          <p className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto">Production-ready AI applications you can test right now</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -79,9 +89,9 @@ const Projects = () => {
               )}
               <div className="flex items-center gap-3">
                 <span className="text-3xl">{project.icon}</span>
-                <h3 className="text-white font-bold text-xl">{project.title}</h3>
+                <h3 className="text-white font-bold text-xl sm:text-2xl">{project.title}</h3>
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed max-w-3xl">{project.description}</p>
+              <p className="text-base text-gray-400 leading-relaxed max-w-3xl">{project.description}</p>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((t) => (
                   <span
@@ -93,15 +103,37 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-semibold mt-auto flex items-center gap-1 hover:underline"
-                style={{ color: project.color }}
-              >
-                View Live Project →
-              </a>
+              {project.title === "AgentZ" && (
+                <div className="flex flex-col sm:flex-row gap-3 mt-auto pt-2">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold hover:opacity-90 min-h-[44px]"
+                    style={{ background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)", color: "white" }}
+                  >
+                    View on GitHub
+                  </a>
+                  <a
+                    href={project.architecture}
+                    className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-semibold hover:bg-white hover:text-slate-900 min-h-[44px]"
+                    style={{ border: "1px solid rgba(255,255,255,0.25)" }}
+                  >
+                    See Architecture
+                  </a>
+                </div>
+              )}
+              {project.title !== "AgentZ" && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold mt-auto flex items-center gap-1 hover:underline"
+                  style={{ color: project.color }}
+                >
+                  View Live Project →
+                </a>
+              )}
             </motion.div>
           ))}
         </div>

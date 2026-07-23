@@ -3,20 +3,23 @@ import { motion } from "framer-motion"
 const About = () => {
   return (
     <section id="about" className="py-20 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-indigo-400 text-sm font-medium mb-3 uppercase tracking-widest">About Me</p>
-          <h2 className="text-4xl font-bold text-white mb-6">Your AI Product Partner</h2>
-          <p className="text-slate-400 leading-relaxed mb-6">
-            I am Zohaib Ali — a Full-Stack MERN (MongoDB, Express, React, Node.js) and AI Engineer. I specialize in building "MERN products that think" — collaborating with companies and founders on a project basis to build, scale, and ship production-ready applications integrated with LLM agents and custom semantic RAG pipelines.
+          <p className="text-indigo-400 text-sm font-medium mb-3 uppercase tracking-widest">Who I am</p>
+          {/* <h2 className="text-4xl font-bold text-white mb-6">Your AI Product Partner</h2> */}
+          <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-6">
+            Started as a developer. Learned the hard way: code alone doesn't solve problems. Problems are systems.
           </p>
-          <p className="text-slate-400 leading-relaxed mb-6">
-            Under Zohaib Systems, I function as an independent technical partner and consultant. I help startups design architecture, establish database modeling, write scalable APIs, and ship production MVPs. I partner directly with teams on fixed-scope projects or monthly engineering retainers.
+          <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-6">
+          Built multi-agent systems (AgentZ). Designed AI products (HealthSync, WasteWise). Learned through building. Each project showed the same thing: architecture first, execution second.
+          </p>
+          <p className="text-base sm:text-lg text-slate-400 leading-relaxed mb-6">
+          I architect AI systems for startups. No bloat. No point solutions. Systems that work.
           </p>
 
           {/* ── Animated Digital Signature Sign-Off ── */}
@@ -36,12 +39,12 @@ const About = () => {
             </div>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a
               href="https://www.linkedin.com/in/zohaib-ali-dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full text-white text-sm font-semibold hover:opacity-90"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full text-white text-sm font-semibold hover:opacity-90 min-h-[44px]"
               style={{ background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)" }}
             >
               Connect on LinkedIn
@@ -50,7 +53,7 @@ const About = () => {
               href="https://github.com/zohaib-ali"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full text-white text-sm font-semibold hover:bg-white hover:text-slate-900"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-full text-white text-sm font-semibold hover:bg-white hover:text-slate-900 min-h-[44px]"
               style={{ border: "1px solid rgba(255,255,255,0.25)" }}
             >
               View GitHub
@@ -63,10 +66,10 @@ const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
         >
           {[
-            { icon: "💻", title: "MERN Stack", desc: "Building scalable full-stack JS apps (Node, Express, Mongo, React)" },
+            { icon: "💻", title: "Systems Architecture", desc: "Designing scalable AI-first web applications and workflows" },
             { icon: "🤖", title: "AI Orchestration", desc: "Integrating LLMs, LangChain, Gemini API, and prompt flows" },
             { icon: "🔍", title: "RAG & Vector Search", desc: "Building semantic search over custom documents" },
             { icon: "🚀", title: "Cloud & DevOps", desc: "Deploying secure microservices on Vercel, Render, AWS, and Docker" },

@@ -13,7 +13,7 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 px-6">
+    <section id="skills" className="py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -23,11 +23,11 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <p className="text-indigo-400 text-sm font-medium mb-3 uppercase tracking-widest">What I Know</p>
-          <h2 className="text-4xl font-bold text-white mb-4">Skills and Tech Stack</h2>
-          <p className="text-gray-400 max-w-xl mx-auto">Technologies I use to build intelligent web applications</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Skills and Tech Stack</h2>
+          <p className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto">Technologies I use to build intelligent web applications</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
@@ -41,7 +41,7 @@ const Skills = () => {
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <span>{skill.icon}</span>
-                  <span className="text-white font-medium text-sm">{skill.name}</span>
+                  <span className="text-white font-medium text-base">{skill.name}</span>
                 </div>
                 <span className="text-indigo-400 text-sm font-semibold">{skill.level}%</span>
               </div>

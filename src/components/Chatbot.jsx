@@ -5,8 +5,8 @@ const STORAGE_KEY = "zohaib-portfolio-chatbot-messages"
 
 const responses = [
   { keywords: ["hi", "hello", "hey", "sup"], response: "Hi there! I am Zohaib's assistant. Ask me about his services, projects, skills, or how to contact him." },
-  { keywords: ["service", "what do you do", "build", "offer"], response: "Zohaib builds intelligent full-stack MERN SaaS apps, custom RAG document search engines, AI agent workflows, and backend systems." },
-  { keywords: ["project", "portfolio", "work", "example"], response: "Check out Zohaib's Path — a flagship AI Career Counseling MVP built on the MERN stack, and WasteWise — an AI-powered waste vision tool." },
+  { keywords: ["service", "what do you do", "build", "offer"], response: "Zohaib architects production AI systems, custom RAG document search engines, AI agent workflows, and backend systems." },
+  { keywords: ["project", "portfolio", "work", "example"], response: "Check out AgentZ, HealthSync, WasteWise, and LM-OS — production AI systems focused on operations and automation." },
   { keywords: ["price", "cost", "how much", "rate", "charge"], response: "Zohaib works on a project-by-project contract basis. Reach out via email (contact@zohaib-systems.dev) or WhatsApp with your requirements to get an estimate." },
   { keywords: ["skill", "tech", "stack", "technology", "use"], response: "Zohaib specializes in MongoDB, Express, React, Node.js, Google Gemini API, Vector Databases (RAG), Firebase, and Tailwind CSS." },
   { keywords: ["contact", "hire", "work together", "order"], response: "You can email Zohaib directly at contact@zohaib-systems.dev or chat on WhatsApp (+923293531951)." },

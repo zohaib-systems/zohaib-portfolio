@@ -48,10 +48,10 @@ const Navbar = () => {
         
         <a
           href="#contact"
-          className="hidden md:block text-white text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 hover:opacity-90"
+          className="hidden md:inline-flex items-center justify-center text-white text-sm font-semibold px-5 py-2 rounded-full transition-all duration-200 hover:opacity-90 min-h-[44px]"
           style={{ background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)" }}
         >
-          Get in Touch
+          Let's Talk
         </a>
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -84,10 +84,10 @@ const Navbar = () => {
           <a
             href="#contact"
             onClick={() => setIsOpen(false)}
-            className="text-white text-sm font-semibold px-5 py-2 rounded-full text-center"
+            className="inline-flex items-center justify-center text-white text-sm font-semibold px-5 py-2 rounded-full text-center min-h-[44px]"
             style={{ background: "linear-gradient(135deg, #6366F1 0%, #06B6D4 100%)" }}
           >
-            Get in Touch
+            Let's Talk
           </a>
         </motion.div>
       )}
