@@ -18,7 +18,7 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 px-6 py-4"
+      className="fixed top-0 left-0 right-0 z-50 px-4 py-4 sm:px-6"
       style={{ background: "rgba(2, 6, 23, 0.8)", backdropFilter: "blur(12px)", borderBottom: "1px solid rgba(255, 255, 255, 0.05)" }}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -54,8 +54,12 @@ const Navbar = () => {
           Let's Talk
         </a>
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white focus:outline-none"
+          className="md:hidden text-white focus:outline-none min-h-[44px] min-w-[44px] inline-flex items-center justify-center"
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-nav-menu"
         >
           <div className="space-y-1.5">
             <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""}`}></span>
@@ -68,7 +72,8 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden mt-4 pb-4 flex flex-col gap-4 px-6"
+          id="mobile-nav-menu"
+          className="md:hidden mt-4 pb-4 flex flex-col gap-4 px-1"
         >
           {navLinks.map((link) => (
             <a
