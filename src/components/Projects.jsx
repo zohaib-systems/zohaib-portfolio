@@ -71,7 +71,7 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
               className={`p-6 rounded-2xl flex flex-col gap-4 relative overflow-hidden ${
-                project.featured ? "md:col-span-2 border-indigo-500/40 bg-indigo-950/10" : ""
+                project.featured ? "md:col-span-2 border-indigo-500/40 bg-indigo-950/10 pt-16 sm:pt-6" : ""
               }`}
               style={{
                 background: project.featured
@@ -83,8 +83,9 @@ const Projects = () => {
               }}
             >
               {project.featured && (
-                <div className="absolute top-4 right-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-indigo-300 bg-indigo-900/35 border border-indigo-500/30">
-                  ⚡ Flagship Production MVP
+                <div className="absolute top-4 left-4 sm:left-auto sm:right-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-indigo-300 bg-indigo-900/35 border border-indigo-500/30 whitespace-nowrap">
+                  <span className="sm:hidden">⚡ Flagship MVP</span>
+                  <span className="hidden sm:inline">⚡ Flagship Production MVP</span>
                 </div>
               )}
               <div className="flex items-center gap-3">
